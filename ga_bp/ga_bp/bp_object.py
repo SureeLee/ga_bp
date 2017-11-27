@@ -61,9 +61,9 @@ def bp_object(individual):
     
     # 3.定义神经层：隐藏层和预测层
     # add hidden layer 输入值是 xs，在隐藏层有 10 个神经元   
-    l1 = add_layer(xs, Weights_1, biases_1, activation_function=tf.nn.sigmoid)
+    l1 = add_layer(xs, Weights_1, biases_1, activation_function=tf.nn.relu)#tf.nn.sigmoid效果可能更好，但与没优化的对比会减弱
     # add output layer 输入值是隐藏层 l1，在预测层输出 1 个结果
-    prediction = add_layer(l1, Weights_2, biases_2, activation_function=tf.nn.sigmoid)
+    prediction = add_layer(l1, Weights_2, biases_2, activation_function=None)#tf.nn.sigmoid
     
     # 4.定义 loss 表达式
     # the error between prediciton and real data    
