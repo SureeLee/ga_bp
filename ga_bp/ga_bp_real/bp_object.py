@@ -3,11 +3,6 @@ Created on 2017年11月21日
 
 @author: ljs
 '''
-'''
-Created on 2017年11月21日
-
-@author: ljs
-'''
 import tensorflow as tf
 import numpy as np
 import csv
@@ -77,11 +72,15 @@ def bp_object(individual):
     sess = tf.Session()
     # 上面定义的都没有运算，直到 sess.run 才会开始运算
     sess.run(init)
-    # 迭代 1000 次学习，sess.run optimizer
     for i in range(1000):
         sess.run(train_step, feed_dict={xs: x_data, ys: y_data})
         error = sess.run(loss, feed_dict={xs: x_data, ys: y_data})
         print(error)
+    #保存模型
+    saver = tf.train.Saver()
+    model_path = "tf_model/bp_model.ckpt"
+    save_path = saver.save(sess,model_path)
+    #计算真实误差
     prediction_value = sess.run(prediction, feed_dict={xs: x_data, ys: y_data})  
     real_pre = scaler_y.inverse_transform(prediction_value)
     result = y - real_pre
