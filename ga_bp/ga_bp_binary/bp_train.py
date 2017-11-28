@@ -62,9 +62,9 @@ def bp_train(individual):
             
             # 3.定义神经层：隐藏层和预测层
             # add hidden layer 输入值是 xs，在隐藏层有 10 个神经元   
-            l1 = add_layer(xs, Weights_1, biases_1, activation_function=tf.nn.relu)#tf.nn.sigmoid
+            l1 = add_layer(xs, Weights_1, biases_1, activation_function=tf.nn.relu)
             # add output layer 输入值是隐藏层 l1，在预测层输出 1 个结果
-            prediction = add_layer(l1, Weights_2, biases_2, activation_function=None)#tf.nn.sigmoid
+            prediction = add_layer(l1, Weights_2, biases_2, activation_function=None)
             
             # 4.定义 loss 表达式
             # the error between prediciton and real data    
@@ -79,9 +79,9 @@ def bp_train(individual):
             # 上面定义的都没有运算，直到 sess.run 才会开始运算
             sess.run(init)
             # 迭代 1000 次学习，sess.run optimizer
-            #for i in range(1):
-            sess.run(train_step, feed_dict={xs: x_data, ys: y_data})
-            error = sess.run(loss, feed_dict={xs: x_data, ys: y_data})
+            for i in range(2):
+                sess.run(train_step, feed_dict={xs: x_data, ys: y_data})
+                error = sess.run(loss, feed_dict={xs: x_data, ys: y_data})
             print(1/error)
             return 1/error
 

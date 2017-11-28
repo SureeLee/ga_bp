@@ -3,16 +3,16 @@ Created on 2017年11月21日
 
 @author: ljs
 '''
-from ga_bp.ga_encoding import ga_encoding
-from ga_bp.ga_decoding import ga_decoding,ga_decoding_individual
-from ga_bp.ga_calObject import ga_calObject
-from ga_bp.ga_calFitness import ga_calFitness
-from ga_bp.ga_selection import ga_selection
-from ga_bp.ga_crossover import ga_crossover
-from ga_bp.ga_mutation import ga_mutation
-from ga_bp.ga_replace import ga_replace
-from ga_bp.ga_getBest import ga_getBest
-from ga_bp.bp_object import bp_object
+from ga_bp_binary.ga_encoding import ga_encoding
+from ga_bp_binary.ga_decoding import ga_decoding,ga_decoding_individual
+from ga_bp_binary.ga_calObject import ga_calObject
+from ga_bp_binary.ga_calFitness import ga_calFitness
+from ga_bp_binary.ga_selection import ga_selection
+from ga_bp_binary.ga_crossover import ga_crossover
+from ga_bp_binary.ga_mutation import ga_mutation
+from ga_bp_binary.ga_replace import ga_replace
+from ga_bp_binary.ga_getBest import ga_getBest
+from ga_bp_binary.bp_object import bp_object
 
 POP_SIZE = 20#种群个体数量
 GEN = 20#遗传迭代代数

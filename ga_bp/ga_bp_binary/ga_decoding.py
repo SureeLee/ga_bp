@@ -10,7 +10,7 @@ def reduce(pop):
     for po in pop:
         temp = []
         for p in po:
-            p = -1 + p*(2/255)
+            p = -0.5 + p*(1/255)
             temp.append(round(p,8))
         population.append(temp)
     return population[1:]          
@@ -37,7 +37,7 @@ def ga_decoding_individual(individual,chrom,num):
         temp.append(t)
     result = []
     for t in temp:
-        t = -1 + t*(2/255)
+        t = -0.5 + t*(1/255)
         result.append(round(t,8))
     return result    
         
