@@ -3,7 +3,7 @@ Created on 2017年11月21日
 
 @author: ljs
 '''
-from ga_bp.bp_train import bp_train 
+from ga_bp_binary.bp_train import bp_train 
 
 def ga_calObject(x):
     obj = []
